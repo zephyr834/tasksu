@@ -6,7 +6,7 @@ with open('requirements.txt') as f:
 setup(
     name="tasksu", 
     version="1.0.3",
-    packages=find_namespace_packages(),
+    package_dir={ '' : 'app' },
     author="Cory",
     author_email="tacocat8345@gmail.com",
     description="A Task Management CLI Application.",
@@ -14,17 +14,10 @@ setup(
     long_description_content_type='text/markdown',
     include_package_data=True,
     url="https://github.com/zephyr834/tasksu",
-    py_modules=[
-        "app",
-        "test"
-    ],
     install_requires=required,
-    tests_require=[
-        "pytest",
-    ],
     entry_points={
         "console_scripts": [
-            "tasksu=app:main",
+            "tasksu=app.cli:cli",
         ],
     },
     classifiers=[
