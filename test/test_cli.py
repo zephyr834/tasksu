@@ -7,14 +7,19 @@ from app.repositories.taskRepository import loadJson
 
 @pytest.fixture()
 def runner():
-    cli.DATABASE = "tasks_test.json"
+    pwd = os.getcwd()
+    dbPath = os.path.join(pwd, "db\\tasks_test.json")
+    cli.DATABASE = dbPath
     yield CliRunner()
     #Teardown
-    if os.path.exists(cli.DATABASE):
-        os.remove(cli.DATABASE)
+    print(dbPath)
+    if os.path.exists(dbPath):
+        print("Resetting DB")
+        os.remove(dbPath)
 
 @pytest.fixture(scope="session")
 def teardown():
+    print("session scope")
     yield "Session scope"
     
 
