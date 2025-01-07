@@ -12,16 +12,8 @@ def runner():
     cli.DATABASE = dbPath
     yield CliRunner()
     #Teardown
-    print(dbPath)
     if os.path.exists(dbPath):
-        print("Resetting DB")
-        os.remove(dbPath)
-
-@pytest.fixture(scope="session")
-def teardown():
-    print("session scope")
-    yield "Session scope"
-    
+        os.remove(dbPath)    
 
 def test_add(runner):  
     expectedUid = 1
