@@ -4,7 +4,11 @@ from util.taskHelper import printTasks
 from services import taskService
 
 DATABASE = "tasks.json"
-package_version = importlib.metadata.version('tasksu')
+package_version = "1.0.1"
+try:
+    package_version = importlib.metadata.version('tasksu')
+except importlib.metadata.PackageNotFoundError:
+    print("Metadata package not found. Using default version metadata.\n")
 
 @click.group()
 @click.version_option(package_version, prog_name="tasksu")
