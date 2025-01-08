@@ -4,3 +4,5 @@ db/
 dist/
 build/
 tasksu.egg-info/
+*pycache
+*_cache

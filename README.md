@@ -29,6 +29,10 @@ Mac
 pip3 install git+https://github.com/zephyr834/tasksu
 ```
 
+## Docker
+
+Images are available under zephyr8345/tasksu
+
 ## Usage:
 
 - **Add a task**
