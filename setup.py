@@ -6,7 +6,8 @@ with open('requirements.txt') as f:
 setup(
     name="tasksu", 
     version="1.0.3",
-    package_dir={ '' : 'app' },
+    # packages=find_namespace_packages(),
+    package_dir={ '' : 'tasksu' },
     author="Cory",
     author_email="tacocat8345@gmail.com",
     description="A Task Management CLI Application.",
@@ -17,7 +18,7 @@ setup(
     install_requires=required,
     entry_points={
         "console_scripts": [
-            "tasksu=app.cli:cli",
+            "tasksu=cli:cli",
         ],
     },
     classifiers=[
